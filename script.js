@@ -47,3 +47,37 @@ function closeLightbox() {
 document.addEventListener("keydown", function(e) {
     if (e.key === "Escape") closeLightbox();
 });
+
+let carouselImages = [];
+let carouselIndex = 0;
+
+function openCarousel(images) {
+    carouselImages = images;
+    carouselIndex = 0;
+    document.getElementById("carousel-lightbox").style.display = "flex";
+    document.body.style.overflow = "hidden";
+    updateCarousel();
+}
+
+function closeCarousel() {
+    document.getElementById("carousel-lightbox").style.display = "none";
+    document.body.style.overflow = "";
+}
+
+function changeSlide(direction) {
+    carouselIndex = (carouselIndex + direction + carouselImages.length) % carouselImages.length;
+    updateCarousel();
+}
+
+function updateCarousel() {
+    document.getElementById("carousel-img").src = carouselImages[carouselIndex];
+    document.getElementById("carousel-counter").textContent = 
+        (carouselIndex + 1) + " / " + carouselImages.length;
+}
+
+// Close on Escape, arrow keys to navigate
+document.addEventListener("keydown", function(e) {
+    if (e.key === "Escape") closeCarousel();
+    if (e.key === "ArrowRight") changeSlide(1);
+    if (e.key === "ArrowLeft") changeSlide(-1);
+});
