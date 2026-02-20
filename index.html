@@ -574,6 +574,97 @@
       line-height: 1.6;
     }
 
+    .testimonials {
+  padding: 8rem 5%;
+  background: var(--navy);
+}
+
+.testimonials-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.testimonials-header .section-eyebrow { justify-content: center; }
+.testimonials-header .section-eyebrow::before {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 1px;
+  background: var(--accent);
+}
+.testimonials-header .section-eyebrow::after { display: none; }
+.testimonials-header .section-title { color: white; }
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.testimonial-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  padding: 2rem;
+  transition: all 0.3s;
+}
+
+.testimonial-card:hover {
+  border-color: rgba(200,169,110,0.3);
+  transform: translateY(-4px);
+}
+
+.testimonial-stars {
+  color: var(--accent);
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+}
+
+.testimonial-text {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.75);
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.testimonial-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.testimonial-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: white;
+}
+
+.testimonial-role {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.45);
+  margin-top: 2px;
+}
+
+@media (max-width: 900px) {
+  .testimonials-grid { grid-template-columns: 1fr; }
+}
+
     /* CONTACT */
     .contact {
       padding: 8rem 5%;
@@ -940,8 +1031,89 @@
           <h1 class="work-type"><strong>Focus:</strong> Color restraint, typographic hierarchy, mood-driven composition</h1>
         </div>
       </div>
+        <div class="work-card" onclick="openCarousel([
+            'image/Login.png',
+            'image/Dashboard.png',
+            'image/Students.png',
+            'image/Attendance.png',
+            'image/Reports.png'
+            ])">
+              <div class="work-thumb" style="background: none; padding: 0; height: 220px; overflow: hidden;">
+                <img src="image/Login.png" alt="SAMS Attendance System"
+                style="width: 100%; object-fit: cover; object-position: top;"/>
+                <span class="work-badge">WEBSITE UI</span>
+              </div>
+              <div class="work-info">
+                <p class="work-type">Web System</p>
+                <h3 class="work-title">SAMS — Attendance Monitor</h3>
+                <p class="work-desc">A clean, functional student attendance management system designed for clarity and ease of use. Features a login screen, live dashboard, student management, attendance tracking, and report generation.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        
+
+        <!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="testimonials-header reveal">
+  <span class="section-eyebrow">Kind Words</span>
+  <h2 class="section-title">Testimonials coming soon.</h2>
+  <p style="color: rgba(255,255,255,0.5); margin-top: 1rem; font-size: 1rem;">
+    I'm currently working with my first clients — reviews will appear here soon!
+  </p>
+</div>
+</section> 
+
+<!-- TESTIMONIALS =
+<section class="testimonials">
+  <div class="testimonials-header reveal">
+    <span class="section-eyebrow">Kind Words</span>
+    <h2 class="section-title">What clients say.</h2>
+  </div>
+  <div class="testimonials-grid">
+
+    <!-- Testimonial Card 1 
+    <div class="testimonial-card reveal">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-text">"Heziel designed my book cover and it was exactly what I envisioned. She was easy to communicate with and the final result was beautiful!"</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">M</div>
+        <div>
+          <p class="testimonial-name">Maria Santos</p>
+          <p class="testimonial-role">Indie Author</p>
+        </div>
+      </div>
     </div>
-  </section>
+
+    <!-- Testimonial Card 2 — Placeholder  
+    <div class="testimonial-card reveal">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-text">"Working with Heziel was a great experience. She understood our brand immediately and delivered a clean, professional design we truly love."</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">J</div>
+        <div>
+          <p class="testimonial-name">James Reyes</p>
+          <p class="testimonial-role">Startup Founder</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Testimonial Card 3 — Placeholder  
+    <div class="testimonial-card reveal">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-text">"Very detail-oriented and thoughtful designer. Heziel paid attention to things I didn't even think to mention. Highly recommend!"</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">A</div>
+        <div>
+          <p class="testimonial-name">Anna Lim</p>
+          <p class="testimonial-role">Small Business Owner</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section> -->
 
   <!-- CONTACT -->
   <section class="contact" id="contact">
@@ -1026,6 +1198,72 @@
     animation: fadeUp 0.3s ease;
 "/>
   </div>
+
+  <!-- Carousel Lightbox -->
+<div id="carousel-lightbox" style="
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  z-index: 999;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(6px);
+">
+  <!-- Close button -->
+  <button onclick="closeCarousel()" style="
+    position: absolute;
+    top: 1.5rem; right: 1.5rem;
+    background: rgba(255,255,255,0.1);
+    border: none; color: white;
+    font-size: 1.5rem;
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    cursor: pointer;
+  ">✕</button>
+
+  <!-- Prev button -->
+  <button onclick="changeSlide(-1)" style="
+    position: absolute;
+    left: 1.5rem;
+    background: rgba(255,255,255,0.1);
+    border: none; color: white;
+    font-size: 1.5rem;
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    cursor: pointer;
+  ">‹</button>
+
+  <!-- Image -->
+  <img id="carousel-img" src="" alt="" style="
+    max-height: 88vh;
+    max-width: 85vw;
+    width: auto; height: auto;
+    border-radius: 12px;
+    box-shadow: 0 32px 80px rgba(0,0,0,0.5);
+  "/>
+
+  <!-- Next button -->
+  <button onclick="changeSlide(1)" style="
+    position: absolute;
+    right: 1.5rem;
+    background: rgba(255,255,255,0.1);
+    border: none; color: white;
+    font-size: 1.5rem;
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    cursor: pointer;
+  ">›</button>
+
+  <!-- Slide counter -->
+  <div id="carousel-counter" style="
+    position: absolute;
+    bottom: 1.5rem;
+    color: rgba(255,255,255,0.6);
+    font-size: 0.85rem;
+    font-family: 'DM Sans', sans-serif;
+  "></div>
+</div>
 </body>
 </html>
 
