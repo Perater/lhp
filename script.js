@@ -10,6 +10,13 @@ function sendMail() {
         return;
     }
 
+     // Check valid email format
+    let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+        alert("Please enter a valid email address (e.g. hello@gmail.com).");
+        return;
+    }
+
     if (proj === "") {
         alert("Please select a project type.");
         return;
@@ -81,3 +88,4 @@ document.addEventListener("keydown", function(e) {
     if (e.key === "ArrowRight") changeSlide(1);
     if (e.key === "ArrowLeft") changeSlide(-1);
 });
+
